@@ -1,7 +1,9 @@
 var 
   React = require("react/addons"),
   TestUtils = React.addons.TestUtils,
-  App = require("app");
+  App = require("app"),
+  Board = require("board");
+
   assert = require("chai").assert;
 
 describe("App component", function(){
@@ -12,8 +14,7 @@ describe("App component", function(){
       React.createElement(App)
     );
 
-    comp = TestUtils.findRenderedDOMComponentWithTag(rendered, 'h1');
-    assert.strictEqual(comp.getDOMNode().textContent, "Insert Tic Tac Toe here.");
+    TestUtils.findRenderedComponentWithType(rendered, Board);
   });
 
 });
