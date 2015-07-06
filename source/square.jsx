@@ -5,16 +5,23 @@ var
 
 module.exports = React.createClass({
   propTypes: {
-    value: React.PropTypes.element.string
+    value: React.PropTypes.string,
+    x: React.PropTypes.number.isRequired,
+    y: React.PropTypes.number.isRequired
   },
 
   getDefaultProps: function() {
     return {
-      value: 'NONE'
+      value: 'NONE',
+      x: 0,
+      y: 0
     };
   },
   render: function() {
-    var className = "square-" + this.props.value;
+    var value = this.props.value;
+    var x = this.props.x;
+    var y = this.props.y;
+    var className = `square-value-${value} square-position-${x}-${y}`
     return (
       <div className={className}></div>
     );
