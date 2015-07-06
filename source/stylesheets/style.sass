@@ -2,3 +2,43 @@ h1.sample
   font-family: Arial
   text-align: center
   margin: 3em auto
+
+$square-color-black:  #000000
+$square-color-red:  #E63009
+$square-color-blue: #175BFF
+$square-size: 100px
+
+.board
+  font-family: Arial
+
+  .square-value-NONE,
+  .square-value-X,
+  .square-value-O
+    position: absolute
+    display: block
+    width: $square-size
+    height: $square-size
+    border: 1px solid black
+    text-align: center
+    font-size: $square-size
+
+  .square-value-NONE
+    color: $square-color-black
+    &:before
+      content: " "
+
+  .square-value-X
+    color: $square-color-blue
+    &:before
+      content: "X"
+
+  .square-value-O
+    color: $square-color-red
+    &:before
+      content: "O"
+
+  @for $row from 1 through 3
+    @for $col from 1 through 3
+      .square-position-#{$col}-#{$row}
+        left: ($col - 1) * $square-size
+        top: ($row - 1) * $square-size

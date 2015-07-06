@@ -7,20 +7,25 @@ var
 
 module.exports = React.createClass({
   render: function(){
-    var squares = [
-      React.createElement(Square),
-      React.createElement(Square),
-      React.createElement(Square),
-      React.createElement(Square),
-      React.createElement(Square),
-      React.createElement(Square),
-      React.createElement(Square),
-      React.createElement(Square),
-      React.createElement(Square)
-    ]
+    var values = [
+      "NONE",
+      "O",
+      "NONE",
+
+      "X",
+      "NONE",
+      "O",
+
+      "NONE",
+      "X",
+      "NONE"
+    ];
+
+    var cols = 3;
+    var rows = 3;
 
     return (
-      <Board cols="3" rows="3" squares={squares}/>
+      <Board cols={cols} rows={rows} values={values}/>
     );
   }
 });

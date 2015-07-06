@@ -9,7 +9,7 @@ module.exports = React.createClass({
     cols: React.PropTypes.number.isRequired,
     rows: React.PropTypes.number.isRequired,
     // TODO ?
-    values: [React.PropTypes.isRequired]
+    // values: [React.PropTypes.string]
   },
 
   getDefaultProps: function() {
