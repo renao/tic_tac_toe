@@ -5,7 +5,7 @@ var
 
 module.exports = React.createClass({
   propTypes: {
-    value: React.PropTypes.string,
+    value: React.PropTypes.oneOf(['O', 'X', 'NONE']),
     x: React.PropTypes.number.isRequired,
     y: React.PropTypes.number.isRequired
   },
