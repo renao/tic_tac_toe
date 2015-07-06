@@ -6,22 +6,22 @@ var
 module.exports = React.createClass({
   propTypes: {
     value: React.PropTypes.oneOf(['O', 'X', 'NONE']),
-    x: React.PropTypes.number.isRequired,
-    y: React.PropTypes.number.isRequired
+    col: React.PropTypes.number.isRequired,
+    row: React.PropTypes.number.isRequired
   },
 
   getDefaultProps: function() {
     return {
       value: 'NONE',
-      x: 0,
-      y: 0
+      col: 0,
+      row: 0
     };
   },
   render: function() {
     var value = this.props.value;
-    var x = this.props.x;
-    var y = this.props.y;
-    var className = `square-value-${value} square-position-${x}-${y}`
+    var col = this.props.col;
+    var row = this.props.row;
+    var className = `square-value-${value} square-position-${col}-${row}`
     return (
       <div className={className}></div>
     );

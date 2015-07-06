@@ -19,7 +19,7 @@ describe("Square component", function(){
   it("shows an X square", function() {
 
     var rendered = TestUtils.renderIntoDocument(
-      React.createElement(Square, { value: 'X', x: 1, y: 2 })
+      React.createElement(Square, { value: 'X', col: 1, row: 2 })
     );
 
     comp = TestUtils.findRenderedDOMComponentWithTag(rendered, 'div');
@@ -29,7 +29,7 @@ describe("Square component", function(){
   it("shows an O square", function() {
 
     var rendered = TestUtils.renderIntoDocument(
-      React.createElement(Square, { value: 'O', x: 2, y: 1 })
+      React.createElement(Square, { value: 'O', col: 2, row: 1 })
     );
 
     comp = TestUtils.findRenderedDOMComponentWithTag(rendered, 'div');
