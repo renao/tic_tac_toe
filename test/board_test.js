@@ -13,7 +13,7 @@ describe("Board component", function(){
     );
 
     comp = TestUtils.findRenderedDOMComponentWithTag(rendered, 'div');
-    assert.strictEqual(comp.getDOMNode().textContent, 'I\'m on a board!');
+    assert.strictEqual(comp.getDOMNode().textContent, '');
   });
 
 });
