@@ -10,7 +10,7 @@ module.exports = React.createClass({
 
   getDefaultProps: function() {
     return {
-      value: 'empty'
+      value: 'NONE'
     };
   },
   render: function() {

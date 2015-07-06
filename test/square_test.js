@@ -13,27 +13,27 @@ describe("Square component", function(){
     );
 
     comp = TestUtils.findRenderedDOMComponentWithTag(rendered, 'div');
-    assert.strictEqual(comp.getDOMNode().className, 'square-empty');
+    assert.strictEqual(comp.getDOMNode().className, 'square-NONE');
   });
 
   it("shows an X square", function() {
 
     var rendered = TestUtils.renderIntoDocument(
-      React.createElement(Square, { value: 'x' })
+      React.createElement(Square, { value: 'X' })
     );
 
     comp = TestUtils.findRenderedDOMComponentWithTag(rendered, 'div');
-    assert.strictEqual(comp.getDOMNode().className, 'square-x');
+    assert.strictEqual(comp.getDOMNode().className, 'square-X');
   });
 
   it("shows an O square", function() {
 
     var rendered = TestUtils.renderIntoDocument(
-      React.createElement(Square, { value: 'o' })
+      React.createElement(Square, { value: 'O' })
     );
 
     comp = TestUtils.findRenderedDOMComponentWithTag(rendered, 'div');
-    assert.strictEqual(comp.getDOMNode().className, 'square-o');
+    assert.strictEqual(comp.getDOMNode().className, 'square-O');
   });
 
 });
