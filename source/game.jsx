@@ -7,6 +7,7 @@ var
 module.exports = React.createClass({
   getInitialState: function() {
     return {
+      currentPlayer: "X",
       values: [
         [
           "NONE",
@@ -32,7 +33,17 @@ module.exports = React.createClass({
   },
 
   handleSquareClick(col, row) {
-    console.log(col, row);
+    var newValue = this.state.currentPlayer;
+    if (this.state.values[row - 1][col - 1] === "NONE") {
+      this.state.values[row - 1][col - 1] = newValue;
+      this.setState({ values: this.state.values });
+      this.nextPlayer();
+    }
+  },
+
+  nextPlayer: function() {
+    this.state.currentPlayer = this.state.currentPlayer == "X" ? "O" : "X";
+    this.setState({ currentPlayer: this.state.currentPlayer });
   },
 
   render: function() {
