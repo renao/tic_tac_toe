@@ -8,18 +8,23 @@ module.exports = React.createClass({
   getInitialState: function() {
     return {
       values: [
-      // TODO prefill NONE values (cols x rows) times
-      "NONE",
-      "NONE",
-      "NONE",
+        [
+          "NONE",
+          "NONE",
+          "NONE",
+        ],
 
-      "NONE",
-      "NONE",
-      "NONE",
+        [
+          "NONE",
+          "NONE",
+          "NONE",
+        ],
 
-      "NONE",
-      "NONE",
-      "NONE"
+        [
+          "NONE",
+          "NONE",
+          "NONE",
+        ]
       ],
       cols: 3,
       rows: 3

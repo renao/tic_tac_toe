@@ -28,15 +28,13 @@ module.exports = React.createClass({
     var values = this.props.values;
     var onClickSquare = this.props.onClickSquare;
 
-    var index = 0;
-    for (var row = 1; row <= rows; row += 1) {
-      for (var col = 1; col <= cols; col += 1) {
-        var value = values[index];
+    for (var row = 1; row <= values.length; row +=1) {
+      for (var col = 1; col <= values[row - 1].length; col += 1) {
+        var value = values[row - 1][col - 1];
         var square = React.createElement(Square, {
           value: value, col: col, row: row, onClick: onClickSquare
         })
         output.push(square);
-        index += 1;
       }
     }
 

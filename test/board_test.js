@@ -19,10 +19,14 @@ describe("Board component", function(){
 
   it("renders 2x2 empty squares", function() {
     var values = [
-      "NONE",
-      "O",
-      "X",
-      "O"
+      [
+        "NONE",
+        "O",
+      ],
+      [
+        "X",
+        "O"
+      ]
     ]
 
     var rendered = TestUtils.renderIntoDocument(
