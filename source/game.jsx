@@ -5,7 +5,6 @@ var
   Board = require("board");
 
 module.exports = React.createClass({
-
   getInitialState: function() {
     return {
       values: [
@@ -27,12 +26,17 @@ module.exports = React.createClass({
     };
   },
 
-  render: function(){
+  handleSquareClick(col, row) {
+    console.log(col, row);
+  },
+
+  render: function() {
     return (
       <Board
         cols={this.state.cols}
         rows={this.state.rows}
         values={this.state.values}
+        onClickSquare={this.handleSquareClick}
         />
     );
   }

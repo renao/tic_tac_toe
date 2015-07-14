@@ -10,6 +10,7 @@ module.exports = React.createClass({
     rows: React.PropTypes.number.isRequired,
     // TODO ?
     // values: [React.PropTypes.string]
+    onClickSquare: React.PropTypes.func
   },
 
   getDefaultProps: function() {
@@ -25,12 +26,15 @@ module.exports = React.createClass({
     var cols = this.props.cols;
     var rows = this.props.rows;
     var values = this.props.values;
+    var onClickSquare = this.props.onClickSquare;
 
     var index = 0;
     for (var row = 1; row <= rows; row += 1) {
       for (var col = 1; col <= cols; col += 1) {
         var value = values[index];
-        var square = React.createElement(Square, { value: value, col: col, row: row })
+        var square = React.createElement(Square, {
+          value: value, col: col, row: row, onClick: onClickSquare
+        })
         output.push(square);
         index += 1;
       }
