@@ -6,8 +6,6 @@ var
 
 module.exports = React.createClass({
   propTypes: {
-    cols: React.PropTypes.number.isRequired,
-    rows: React.PropTypes.number.isRequired,
     // TODO ?
     // values: [React.PropTypes.string]
     onClickSquare: React.PropTypes.func
@@ -15,16 +13,12 @@ module.exports = React.createClass({
 
   getDefaultProps: function() {
     return {
-      cols: 0,
-      rows: 0,
       values: []
     }
   },
 
   render: function() {
     var output = [];
-    var cols = this.props.cols;
-    var rows = this.props.rows;
     var values = this.props.values;
     var onClickSquare = this.props.onClickSquare;
 

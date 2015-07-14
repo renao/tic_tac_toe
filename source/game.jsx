@@ -26,9 +26,7 @@ module.exports = React.createClass({
           "NONE",
           "NONE",
         ]
-      ],
-      cols: 3,
-      rows: 3
+      ]
     };
   },
 
@@ -49,8 +47,6 @@ module.exports = React.createClass({
   render: function() {
     return (
       <Board
-        cols={this.state.cols}
-        rows={this.state.rows}
         values={this.state.values}
         onClickSquare={this.handleSquareClick}
         />
