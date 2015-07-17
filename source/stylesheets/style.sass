@@ -8,10 +8,11 @@ body
   font-family: Arial
 
 .board
+  display: flex
   .square-value-NONE,
   .square-value-X,
   .square-value-O
-    position: absolute
+
     display: block
     width: $square-size
     height: $square-size
@@ -33,13 +34,6 @@ body
     color: $square-color-red
     &:before
       content: "O"
-
-  @for $row from 1 through 3
-    @for $col from 1 through 3
-      .square-position-#{$col}-#{$row}
-        left: ($col - 1) * $square-size
-        top: ($row - 1) * $square-size
-
 
 .player
   border: 1px solid black

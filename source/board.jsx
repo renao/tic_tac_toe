@@ -17,19 +17,28 @@ module.exports = React.createClass({
     }
   },
 
+  createRow: function(row, cells) {
+    var rowElements = [];
+    var onClickSquare = this.props.onClickSquare;
+    for (var col = 1; col <= cells.length; col += 1) {
+      var value = cells[col - 1];
+      var square = React.createElement(Square, {
+        value: value, col: col, row: row, onClick: onClickSquare
+      })
+      rowElements.push(square);
+    }
+    return (
+      <div class="row">{rowElements}</div>
+    )
+  },
+
   render: function() {
     var output = [];
     var values = this.props.values;
-    var onClickSquare = this.props.onClickSquare;
 
     for (var row = 1; row <= values.length; row +=1) {
-      for (var col = 1; col <= values[row - 1].length; col += 1) {
-        var value = values[row - 1][col - 1];
-        var square = React.createElement(Square, {
-          value: value, col: col, row: row, onClick: onClickSquare
-        })
-        output.push(square);
-      }
+      var line = this.createRow(row, values[row - 1]);
+      output.push(line);
     }
 
     return (

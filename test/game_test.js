@@ -12,8 +12,6 @@ describe("The Game", function(){
       React.createElement(Game)
     );
 
-    comp = TestUtils.findRenderedDOMComponentWithClass(rendered, 'board');
-    assert.strictEqual(comp.getDOMNode().children.length, 3 * 3);
-
+    TestUtils.findRenderedDOMComponentWithClass(rendered, 'board');
   });
 });
