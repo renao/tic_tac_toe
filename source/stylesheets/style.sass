@@ -3,9 +3,11 @@ $square-color-red:  #E63009
 $square-color-blue: #175BFF
 $square-size: 100px
 
-.board
+
+body
   font-family: Arial
 
+.board
   .square-value-NONE,
   .square-value-X,
   .square-value-O
@@ -37,3 +39,17 @@ $square-size: 100px
       .square-position-#{$col}-#{$row}
         left: ($col - 1) * $square-size
         top: ($row - 1) * $square-size
+
+
+.player
+  border: 1px solid black
+
+.player-X
+  color: $square-color-blue
+  &:after
+    content: "X"
+
+.player-O
+  color: $square-color-red
+  &:after
+    content: "O"

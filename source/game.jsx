@@ -2,7 +2,8 @@
 
 var
   React = require("react"),
-  Board = require("board");
+  Board = require("board"),
+  CurrentPlayer = require("current_player");
 
 module.exports = React.createClass({
   getInitialState: function() {
@@ -46,10 +47,15 @@ module.exports = React.createClass({
 
   render: function() {
     return (
-      <Board
-        values={this.state.values}
-        onClickSquare={this.handleSquareClick}
+      <div>
+        <Board
+          values={this.state.values}
+          onClickSquare={this.handleSquareClick}
         />
+        <CurrentPlayer
+          currentPlayer={this.state.currentPlayer}
+        />
+      </div>
     );
   }
 });
